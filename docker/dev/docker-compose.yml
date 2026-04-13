@@ -57,7 +57,7 @@ services:
     build:
       context: ../../
       dockerfile: docker/dev/Dockerfile
-    command: celery -A app.infra.celery.worker worker --loglevel=info
+    command: celery -A app.infra.celery.worker.celery_app worker --loglevel=info
     depends_on:
       - redis
       - mysql

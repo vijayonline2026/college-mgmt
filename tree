@@ -2,7 +2,7 @@ college-management/
 ├── app/
 │   ├── main.py
 │   ├── core/
-│   ├── db/
+│   ├── db/ (session.py , base.py, init_db.py)
 │   ├── modules/
 │   │   ├── students/ ( model.py , schema.py , service.py , repositories.py , router.py)
 │   │   ├── faculty/ ( model.py , schema.py , service.py , repositories.py , router.py)
