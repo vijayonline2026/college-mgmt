@@ -1,0 +1,66 @@
+services:
+  # 🧪 DEV
+  app:
+    profiles: ["dev"]
+    extends:
+      file: docker/dev/docker-compose.yml
+      service: app
+
+  mysql:
+    profiles: ["dev"]
+    extends:
+      file: docker/dev/docker-compose.yml
+      service: mysql
+
+  redis:
+    profiles: ["dev"]
+    extends:
+      file: docker/dev/docker-compose.yml
+      service: redis
+
+  celery_worker:
+    profiles: ["dev"]
+    extends:
+      file: docker/dev/docker-compose.yml
+      service: celery_worker
+
+  kafka:
+    profiles: ["dev"]
+    extends:
+      file: docker/dev/docker-compose.yml
+      service: kafka
+
+
+  # 🚀 PROD
+  app-prod:
+    profiles: ["prod"]
+    extends:
+      file: docker/prod/docker-compose.yml
+      service: app
+
+  mysql-prod:
+    profiles: ["prod"]
+    extends:
+      file: docker/prod/docker-compose.yml
+      service: mysql
+
+  redis-prod:
+    profiles: ["prod"]
+    extends:
+      file: docker/prod/docker-compose.yml
+      service: redis
+
+  celery_worker-prod:
+    profiles: ["prod"]
+    extends:
+      file: docker/prod/docker-compose.yml
+      service: celery_worker
+
+  kafka-prod:
+    profiles: ["prod"]
+    extends:
+      file: docker/prod/docker-compose.yml
+      service: kafka
+
+volumes:
+  mysql_data:

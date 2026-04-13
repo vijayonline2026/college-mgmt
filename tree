@@ -1,0 +1,35 @@
+college-management/
+├── app/
+│   ├── main.py
+│   ├── core/
+│   ├── db/
+│   ├── modules/
+│   │   ├── students/ ( model.py , schema.py , service.py , repositories.py , router.py)
+│   │   ├── faculty/ ( model.py , schema.py , service.py , repositories.py , router.py)
+│   │   ├── courses/ ( model.py , schema.py , service.py , repositories.py , router.py)
+│   │   ├── admin/ ( model.py , schema.py , service.py , repositories.py , router.py)
+│   ├── api/
+│   ├── services/
+│   └── utils/
+│   └── infra/
+│   │   ├── celery/
+│   │   ├── kafka/
+│   │   ├── redis/
+│
+├── tests/
+├── docker/
+│   ├── dev/ (Dockerfile , docker-compose.yml )
+│   ├── prod/ (Dockerfile , docker-compose.yml )
+│   ├── common/ (prometheus.yml)
+├── alembic/
+├── docker-compose.yml
+├── Dockerfile
+├── .env
+└── README.md
+
+Dev
+    docker-compose up --build (or)
+    docker-compose --profile dev up --build
+Prod
+    docker-compose -f docker-compose.yml -f docker/prod/docker-compose.yml up --build -d (or)
+    docker-compose --profile prod up --build -d
