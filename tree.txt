@@ -10,6 +10,8 @@ college-management/
 │   │   ├── admin/ ( model.py , schema.py , service.py , repositories.py , router.py)
 │   ├── api/
 │   ├── services/
+│   ├── models/
+│   ├── schemas/
 │   └── utils/
 │   └── infra/
 │   │   ├── celery/
@@ -26,10 +28,3 @@ college-management/
 ├── Dockerfile
 ├── .env
 └── README.md
-
-Dev
-    docker-compose up --build (or)
-    docker-compose --profile dev up --build
-Prod
-    docker-compose -f docker-compose.yml -f docker/prod/docker-compose.yml up --build -d (or)
-    docker-compose --profile prod up --build -d

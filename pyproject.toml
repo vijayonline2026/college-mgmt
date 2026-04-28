@@ -39,6 +39,8 @@ prometheus-client = "^0.20.0"
 
 # 📧 Optional (since you used email service earlier)
 email-validator = "^2.1.1"
+pymysql = "^1.1.2"
+cryptography = "^47.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.1.1"

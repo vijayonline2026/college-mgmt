@@ -1,0 +1,19 @@
+Dev
+    docker-compose up --build (or)
+    docker-compose --profile dev up --build
+Prod
+    docker-compose -f docker-compose.yml -f docker/prod/docker-compose.yml up --build -d (or)
+    docker-compose --profile prod up --build -d
+
+docker compose -f docker/dev/docker-compose.yml up -d --build
+docker compose -f docker/dev/docker-compose.yml down
+docker compose -f docker/dev/docker-compose.yml exec app poetry add pymysql
+docker compose -f docker/dev/docker-compose.yml exec app poetry add cryptography
+docker compose -f docker/dev/docker-compose.yml exec app printenv | grep ALEMBIC -- load env value for alembic
+
+docker compose -f docker/dev/docker-compose.yml exec app poetry run alembic init alembic
+docker compose -f docker/dev/docker-compose.yml exec app poetry run alembic revision --autogenerate -m "init"
+docker compose -f docker/dev/docker-compose.yml exec app poetry run alembic upgrade head
+
+docker compose -f docker/dev/docker-compose.yml exec app poetry run alembic revision --autogenerate -m "create users table"
+docker compose -f docker/dev/docker-compose.yml exec app poetry run alembic upgrade head
